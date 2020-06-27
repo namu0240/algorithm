@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e2a4621f-b50d-489f-82d0-f0d779477b65" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dtFVcDbppSMufHVDq9mqguPyRa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ebay" />
+      <recent name="$PROJECT_DIR$/src/programmers" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.P9012">
+    <configuration name="P10828" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="beakjoon.P10828" />
+      <module name="Algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="beakjoon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="P9012" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="beakjoon.P9012" />
+      <module name="Algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="beakjoon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="Algorithm" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="Algorithm" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.P9012" />
+        <item itemvalue="Application.P10828" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e2a4621f-b50d-489f-82d0-f0d779477b65" name="Default Changelist" comment="" />
+      <created>1593236507003</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593236507003</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="795" height="361" key="GridCell.Tab.0.bottom" timestamp="1593247316084">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state width="795" height="361" key="GridCell.Tab.0.bottom/0.25.1626.1025@0.25.1626.1025" timestamp="1593247316084" />
+    <state width="795" height="361" key="GridCell.Tab.0.center" timestamp="1593247316083">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state width="795" height="361" key="GridCell.Tab.0.center/0.25.1626.1025@0.25.1626.1025" timestamp="1593247316083" />
+    <state width="795" height="361" key="GridCell.Tab.0.left" timestamp="1593247316083">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state width="795" height="361" key="GridCell.Tab.0.left/0.25.1626.1025@0.25.1626.1025" timestamp="1593247316083" />
+    <state width="795" height="361" key="GridCell.Tab.0.right" timestamp="1593247316084">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state width="795" height="361" key="GridCell.Tab.0.right/0.25.1626.1025@0.25.1626.1025" timestamp="1593247316084" />
+    <state width="795" height="342" key="GridCell.Tab.1.bottom" timestamp="1593245283550">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state width="795" height="342" key="GridCell.Tab.1.bottom/0.25.1626.1025@0.25.1626.1025" timestamp="1593245283550" />
+    <state width="795" height="342" key="GridCell.Tab.1.center" timestamp="1593245283549">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state width="795" height="342" key="GridCell.Tab.1.center/0.25.1626.1025@0.25.1626.1025" timestamp="1593245283549" />
+    <state width="795" height="342" key="GridCell.Tab.1.left" timestamp="1593245283548">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state width="795" height="342" key="GridCell.Tab.1.left/0.25.1626.1025@0.25.1626.1025" timestamp="1593245283548" />
+    <state width="795" height="342" key="GridCell.Tab.1.right" timestamp="1593245283549">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state width="795" height="342" key="GridCell.Tab.1.right/0.25.1626.1025@0.25.1626.1025" timestamp="1593245283549" />
+    <state x="399" y="262" width="827" height="550" key="find.popup" timestamp="1593261049804">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state x="399" y="262" width="827" height="550" key="find.popup/0.25.1626.1025@0.25.1626.1025" timestamp="1593261049804" />
+    <state x="871" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1593246731894">
+      <screen x="0" y="25" width="1626" height="1025" />
+    </state>
+    <state x="871" y="252" width="670" height="676" key="search.everywhere.popup/0.25.1626.1025@0.25.1626.1025" timestamp="1593246731894" />
+  </component>
+</project>
