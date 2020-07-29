@@ -7,72 +7,79 @@ public class P2504 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-//        System.out.println(solution(scanner.next()));
-        System.out.println(solution("(((())))"));
+        System.out.println(solution(scanner.next()));
     }
 
-    private static int solution(String formula) {
-        int result = 0;
-        Stack<String> characterStack = new Stack<>();
+    private static int solution(String data) {
 
-        for (String operator : formula.split("")) {
+        Stack<String> stringStack = new Stack<>();
 
-            // 열린 괄호면 스택에 푸쉬
-            if (isOpener(operator)) {
-                characterStack.push(operator);
-                continue;
-            }
+        for (String inputValue : data.split("")) {
 
-            // 닽힌 괄호일 경우
-            if (isCloser(operator)) {
+            // 이상한 값이면 걸러야 함!!!....
 
-                String peekValue = characterStack.peek();
-
-                // 스택의 마지막 값이 열린 괄호면 팝을 하고 숫자를 푸쉬
-                if (isOpener(peekValue)) {
-                    characterStack.pop();
-                    characterStack.push(peekValue.equals("(") ? "2" : "3");
-                    continue;
+            if (inputValue.equals("(") || inputValue.equals("[")) {
+                stringStack.push(inputValue);
+            } else {
+                // 잘못 된 값의 경우 예외 처리
+                if (stringStack.isEmpty()) {
+                    return 0;
                 }
 
-                // 스택의 마지막 값이 숫자 일 경우
-                if (isNumber(peekValue)) {
-                    // 괄호를 만날때 까지 더하고 곱한 다음 푸쉬
-                    int sumValue = 0;
-                    while (isNumber(characterStack.peek())) {
-                        sumValue += Integer.parseInt(characterStack.pop());
-                    }
-                    characterStack.pop();
-                    characterStack.push(String.valueOf(sumValue * (operator.equals(")") ? 2 : 3)));
-                    continue;
+                if (inputValue.equals(")")) {
+                    if (!innerCalculate(stringStack, "(", "["))
+                        return 0;
+                } else {
+                    if (!innerCalculate(stringStack, "[", "("))
+                        return 0;
                 }
+            }
 
-                characterStack.push(operator);
+        }
+
+        return resultCalculate(stringStack);
+    }
+
+    public static boolean innerCalculate(Stack<String> stringStack, String yes, String no) {
+
+        // 합계
+        int sum = 0;
+        // 주어진 괄호에 대한 값
+        int mul = yes.equals("(") ? 2 : 3;
+
+        // 스택이 비어질 동안
+        while (!stringStack.isEmpty()) {
+            String popString = stringStack.pop();
+
+            // 스택의 마지막 값이 허용하지 않는 값이면
+            if (popString.equals(no))
+                return false;
+
+            // 스택의 마지막 값이 허용 하는 값이면
+            else if (popString.equals(yes)) {
+                // 값을 더하고
+                sum = (sum == 0) ? 1 : sum;
+                // 값을 넣는다.
+                stringStack.push(Integer.toString(sum * mul));
+                return true;
+            } else {
+                sum += Integer.parseInt(popString);
             }
         }
+        return false;
+    }
 
-        while (!characterStack.isEmpty()) {
-            result += Integer.parseInt(characterStack.pop());
+    public static int resultCalculate(Stack<String> stringStack) {
+        int sum = 0;
+        while (!stringStack.isEmpty()) {
+            try {
+                int popValue = Integer.parseInt(stringStack.pop());
+                sum += popValue;
+            } catch (Exception exception) {
+                return 0;
+            }
         }
-
-        return result;
-    }
-
-    private static boolean isOpener(String character) {
-        return character.equals("(") || character.equals("[");
-    }
-
-    private static boolean isCloser(String character) {
-        return character.equals(")") || character.equals("]");
-    }
-
-    private static boolean isNumber(String character) {
-        try {
-            Integer.parseInt(character);
-            return true;
-        } catch (Exception exception) {
-            return false;
-        }
+        return sum;
     }
 
 }
