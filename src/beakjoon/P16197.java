@@ -3,7 +3,6 @@ package beakjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class P16197 {
@@ -12,10 +11,9 @@ public class P16197 {
     static int width;
     static int height;
     static char[][] map;
-    static boolean[][] visible;
 
-    static int[] mx = {0, 0, -1, 1};
-    static int[] my = {1, -1, 0, 0};
+    static int[] moveX = {0, 0, -1, 1};
+    static int[] moveY = {1, -1, 0, 0};
 
     public static void main(String[] args) throws IOException {
 
@@ -25,78 +23,82 @@ public class P16197 {
         height = Integer.parseInt(stringTokenizer.nextToken());
         width = Integer.parseInt(stringTokenizer.nextToken());
         map = new char[height][width];
-        visible = new boolean[height][width];
 
-        boolean isFirst = true;
-        int firstX = 0;
-        int firstY = 0;
-        int secondX = 0;
-        int secondY = 0;
+        boolean isFind = true;
+        int x1 = 0;
+        int y1 = 0;
+        int x2 = 0;
+        int y2 = 0;
 
         for (int i = 0; i < height; i++) {
             map[i] = bufferedReader.readLine().toCharArray();
             for (int j = 0; j < width; j++) {
                 if (map[i][j] == 'o') {
-                    if (isFirst) {
-                        firstX = j;
-                        firstY = i;
-                        isFirst = false;
+                    if (isFind) {
+                        x1 = j;
+                        y1 = i;
+                        isFind = false;
                     } else {
-                        secondX = j;
-                        secondY = i;
+                        x2 = j;
+                        y2 = i;
                     }
                 }
             }
         }
 
-        solution(0, firstX, firstY, secondX, secondY);
+        solution(0, x1, y1, x2, y2);
+
+        if (min == Integer.MAX_VALUE) {
+            System.out.println(-1);
+            return;
+        }
 
         System.out.println(min);
 
     }
 
-    public static void solution(int index, int firstX, int firstY, int secondX, int secondY) {
+    public static void solution(int index, int x1, int y1, int x2, int y2) {
 
         // 10번 보다 많이 눌러야 한다면 return
         if (index > 10 || index > min) {
             return;
         }
 
-        visible[firstY][firstX] = true;
-
         for (int i = 0; i < 4; i++) {
 
-            int firstMx = firstX + mx[i];
-            int firstMy = firstY + my[i];
-            int secondMx = secondX + mx[i];
-            int secondMy = secondY + my[i];
+            int movedX1 = x1 + moveX[i];
+            int movedY1 = y1 + moveY[i];
+            int movedX2 = x2 + moveX[i];
+            int movedY2 = y2 + moveY[i];
 
-            boolean isFirstDrop = isDrop(firstMx, firstMy);
-            boolean isSecondDrop = isDrop(secondMx, secondMy);
+            boolean isDropFirstDot = isDrop(movedX1, movedY1);
+            boolean isDropSecondDot = isDrop(movedX2, movedY2);
 
-            if (isFirstDrop && isSecondDrop) {
+            // 만약 둘다 떨어졌다면 아웃!
+            if (isDropFirstDot && isDropSecondDot) {
                 continue;
             }
 
-            if (isFirstDrop || isSecondDrop) {
-                min = Math.min(min, index + 1);
+            // 한쪽만 떨어졌다면 index 계산
+            if (isDropFirstDot || isDropSecondDot) {
+                min = Math.min(min, ((index + 1) > 10) ? Integer.MAX_VALUE : (index + 1));
                 continue;
             }
 
-            if (isWall(firstMx, firstMy)) {
-                firstMx = firstX;
-                firstMy = firstY;
+            // 만약 벽이라면 이동을 취소
+            if (isWall(movedX1, movedY1)) {
+                movedX1 = x1;
+                movedY1 = y1;
             }
 
-            if (isWall(secondMx, secondMy)) {
-                secondMx = secondX;
-                secondMy = secondY;
+            // 만약 벽이 아니라면 이동을 취소
+            if (isWall(movedX2, movedY2)) {
+                movedX2 = x2;
+                movedY2 = y2;
             }
 
-            solution(index + 1, firstMx, firstMy, secondMx, secondMy);
+            solution(index + 1, movedX1, movedY1, movedX2, movedY2);
         }
-
-        visible[firstY][firstX] = false;
 
     }
 
