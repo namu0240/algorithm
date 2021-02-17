@@ -3,56 +3,77 @@ package beakjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.util.StringTokenizer;
 
 public class P1062 {
 
-    static int bitMask = 0;
     static int n;
     static int k;
+    static boolean[] visible;
+    static String[] strings;
+    static int max;
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader stringBufferedReader = new BufferedReader(new StringReader("" +
-                "9 8\n" +
-                "antabtica\n" +
-                "antaxtica\n" +
-                "antadtica\n" +
-                "antaetica\n" +
-                "antaftica\n" +
-                "antagtica\n" +
-                "antahtica\n" +
-                "antajtica\n" +
-                "antaktica"));
-
-        StringTokenizer stringTokenizer = new StringTokenizer(stringBufferedReader.readLine());
+        StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
 
         n = Integer.parseInt(stringTokenizer.nextToken());
         k = Integer.parseInt(stringTokenizer.nextToken());
+        visible = new boolean[27];
+        strings = new String[n];
 
-        int result = 0;
-        for (int i = 0; i < n; i++) {
-            // 마스킹 처리
-            for (char aChar : stringBufferedReader.readLine().toCharArray()) {
-                bitMask = bitMask | (1 << aChar - 'a' + 1);
+        if (k < 5) {
+            System.out.println(0);
+        } else if (k == 26) {
+            System.out.println(n);
+        } else {
+            for (int i = 0; i < n; i++) {
+                String string = bufferedReader.readLine();
+                strings[i] = string.substring(4, string.length() - 4);
             }
-            // 마스킹 개수 처리
-            int count = 0;
-            for (int j = 1; j < 30; j++) {
-                if ((bitMask & (1 << j)) >= 1) {
-                    count++;
+            // 기본 값
+            visible[0] = true;
+            visible['n' - 'a'] = true;
+            visible['t' - 'a'] = true;
+            visible['i' - 'a'] = true;
+            visible['c' - 'a'] = true;
+            k -= 5;
+
+            solution(0, 0);
+
+            System.out.println(max);
+        }
+
+    }
+
+    public static void solution(int index, int start) {
+        if (index == k) {
+            int countWord = 0;
+            for (int i = 0; i < n; i++) {
+                boolean isReadable = true;
+                for (char aChar : strings[i].toCharArray()) {
+                    // 읽을 수 없다면
+                    if (!visible[aChar - 'a']) {
+                        isReadable = false;
+                        break;
+                    }
+                }
+                if (isReadable) {
+                    countWord++;
                 }
             }
-            // 결과값 처리
-            if (count <= k) {
-                result++;
-            }
-            bitMask = 0;
+            max = Math.max(max, countWord);
+            return;
         }
-        System.out.println(result);
 
+        for (int i = start; i < 26; i++) {
+            if (!visible[i]) {
+                visible[i] = true;
+                solution(index + 1, i);
+                visible[i] = false;
+            }
+        }
     }
 
 }

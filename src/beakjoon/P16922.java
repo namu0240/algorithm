@@ -26,6 +26,8 @@ public class P16922 {
     }
 
     public static void solution(int index, int forI, int sum) {
+        System.out.println("index = " + index + ", forI = " + forI + ", sum = " + sum);
+
         if (index == n) {
             if (!number[sum]) {
                 number[sum] = true;
