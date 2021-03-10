@@ -1,7 +1,5 @@
 package beakjoon.week_5;
 
-import com.sun.codemodel.internal.JCommentPart;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
